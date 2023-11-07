@@ -21,6 +21,10 @@ func init() {
 // }
 
 func birthday(pointerAge *int) {
+	if (*pointerAge > 140) {
+		panic("Too old to be true")
+	}
+
 	fmt.Printf("The pointer is %v and the value is %v\n", pointerAge, *pointerAge)
 
 	*pointerAge++
@@ -30,6 +34,9 @@ func main() {
 	// _, cityTax := calculateTax(100)
 
 	// fmt.Println(cityTax)
+
+	defer fmt.Println("Bye!!")
+	defer fmt.Println("Good")
 
 	age := 22
 	birthday(&age)
