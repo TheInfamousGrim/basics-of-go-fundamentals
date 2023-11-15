@@ -10,11 +10,16 @@ import (
 func main() {
 	dir, _ := os.Getwd()
 
-	contents, err := fileutils.ReadTextFile(dir + "/data/text.txt")
+	filePath := dir + "/data/text.txt"
+
+	contents, err := fileutils.ReadTextFile(filePath)
 
 	if (err != nil) {
 		fmt.Printf("Error Panic!!! %v", err)
 	} else {
 		fmt.Println(contents)
+
+		newContent := fmt.Sprintf("Original: %v\n\nDouble Original: %v, %v", contents, contents, contents)
+		fileutils.WriteToFile(dir + "/data/output.txt", newContent)
 	}
 }
