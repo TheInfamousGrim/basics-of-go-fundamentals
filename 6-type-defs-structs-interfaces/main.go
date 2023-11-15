@@ -13,6 +13,9 @@ func main() {
 
 	max.LastName = "Fabiano"
 	max.Score = 96
+
+	kyle := data.NewInstructor("Kyle", "Simpson")
 	
 	fmt.Println(max.Print())
+	fmt.Println(kyle.Print())
 }
